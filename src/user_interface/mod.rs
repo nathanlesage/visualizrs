@@ -33,6 +33,11 @@ use util::{cursor_in_rect, format_number};
 // Needed for the timeout
 use std::time;
 
+// Needed to resolve the asset path
+use std::env::current_dir;
+
+use std::path::Path;
+
 // Necessary to retrieve a list of available input devices.
 use crate::audio::util::{fetch_devices, AudioDevice};
 
@@ -71,9 +76,11 @@ pub struct UI<'a> {
 
 impl UI<'static> {
   pub fn create () -> Self {
-    // TODO: Don't hardcode
-    let font_path = String::from("/Users/hendrik/Documents/dev/visualizrs/assets/fonts/lato/Lato-Regular.ttf");
-    let glyph_cache = GlyphCache::new(font_path.as_str(), (), TextureSettings::new()).unwrap();
+    let __dirname = current_dir().unwrap(); // When in development-mode, it'll refer to the crate's root, not the actual binary
+    let path_to_font = "assets/fonts/lato/Lato-Regular.ttf";
+    let font_path = String::from(Path::new(&__dirname).join(path_to_font).to_str().unwrap());
+    println!("{}", font_path);
+    let glyph_cache = GlyphCache::new(font_path.clone(), (), TextureSettings::new()).unwrap();
 
     Self {
       // General window parameters
