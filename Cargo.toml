@@ -1,0 +1,18 @@
+[package]
+name = "wmp_viz"
+version = "0.1.0"
+authors = ["Hendrik Erz <hendrik@zettlr.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+piston = "0.50.0" # Core library of Piston (I assume )
+piston2d-graphics = "0.36.0" # Core graphics (needs a backend, e.g. OpenGL, DirectX, Vulkan)
+pistoncore-glutin_window = "0.64.0" # Glutin is a pure rust implementation to create windows
+piston2d-opengl_graphics = "0.72.0" # Our graphics backend: OpenGL
+image = "0.23.7" # Needed to provide the image which will be drawn upon
+winit = "^0.19.3" # Needed for the PhysicalSize struct, version needs to match, taken from glutin
+portaudio-rs = "0.3.2"
+cpal = "0.12.0"
+rustfft = "3.0.1"
