@@ -1,5 +1,5 @@
 [package]
-name = "wmp_viz"
+name = "visualizrs"
 version = "0.1.0"
 authors = ["Hendrik Erz <hendrik@zettlr.com>"]
 edition = "2018"

@@ -72,7 +72,7 @@ pub struct UI<'a> {
 impl UI<'static> {
   pub fn create () -> Self {
     // TODO: Don't hardcode
-    let font_path = String::from("/Users/hendrik/Documents/dev/wmp_viz/assets/fonts/lato/Lato-Regular.ttf");
+    let font_path = String::from("/Users/hendrik/Documents/dev/visualizrs/assets/fonts/lato/Lato-Regular.ttf");
     let glyph_cache = GlyphCache::new(font_path.as_str(), (), TextureSettings::new()).unwrap();
 
     Self {

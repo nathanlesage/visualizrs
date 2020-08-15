@@ -1239,6 +1239,21 @@ version = "0.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "visualizrs"
+version = "0.1.0"
+dependencies = [
+ "cpal 0.12.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "image 0.23.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "piston 0.50.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "piston2d-graphics 0.36.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "piston2d-opengl_graphics 0.72.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "pistoncore-glutin_window 0.64.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "portaudio-rs 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustfft 3.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "winit 0.19.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "void"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1414,21 +1429,6 @@ dependencies = [
  "wayland-client 0.21.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "winapi 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "x11-dl 2.18.5 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "wmp_viz"
-version = "0.1.0"
-dependencies = [
- "cpal 0.12.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "image 0.23.7 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston 0.50.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston2d-graphics 0.36.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston2d-opengl_graphics 0.72.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "pistoncore-glutin_window 0.64.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "portaudio-rs 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rustfft 3.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "winit 0.19.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]

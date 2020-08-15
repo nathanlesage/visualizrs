@@ -52,6 +52,8 @@ const AVAILABLE_RENDERERS: [(&str, usize); 3] = [
   ("StereoTree", 3)
 ];
 
+const WINDOW_TITLE: &str = "VisualizRS";
+
 pub struct App<'a>{
   gl: GlGraphics, // OpenGL drawing backend
   window: GlutinWindow, // Containing Window
@@ -71,7 +73,7 @@ impl App<'static> {
   pub fn boot (ver: glutin_window::OpenGL) -> App<'static> {
 
     // First, define the Window settings
-    let settings = WindowSettings::new("VisualizeRS", Size::from([640, 480]))
+    let settings = WindowSettings::new(WINDOW_TITLE, Size::from([640, 480]))
     .graphics_api(ver) // Use OpenGL API
     .exit_on_esc(true); // DEBUG remove for production!
 
@@ -137,7 +139,7 @@ impl App<'static> {
   fn update(&mut self, args: &UpdateArgs) {
     let now = time::Instant::now();
     if now.duration_since(self.last_check) > time::Duration::new(1, 0) {
-      self.window.set_title(format!("VisualizRS ({} fps)", self.frame_counter));
+      self.window.set_title(format!("{} ({} fps)", WINDOW_TITLE, self.frame_counter));
       self.last_check = now;
       self.frame_counter = 0;
     }
