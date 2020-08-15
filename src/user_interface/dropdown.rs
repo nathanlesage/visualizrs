@@ -67,15 +67,15 @@ impl UIDropdown {
     }
 
     Self {
-      id: id,
+      id,
       items: i,
       base_font_size: font_size,
       rect: [top_x, top_y, item_width, item_height * item_count],
-      position: position,
-      padding: padding,
-      item_height: item_height,
+      position,
+      padding,
+      item_height,
       draw_from_bottom: draw_up,
-      font: font
+      font
     }
   }
 }
@@ -141,7 +141,7 @@ impl UIElement for UIDropdown {
   }
 
   // /// Called when a key on the keyboard has been pressed
-  fn on_keypress (&mut self, key: Key) {
+  fn on_keypress (&mut self, _key: Key) {
     // TODO: Handle up/down arrows when this thing has focus
   }
 }

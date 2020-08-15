@@ -211,6 +211,7 @@ impl App<'static> {
     // Cf: https://docs.rs/glutin/0.17.0/glutin/dpi/index.html
     // let dpi = self.window.window().get_hidpi_factor();
     // TODO: Somehow doesn't work on macOS built-in retina displays
+    println!("Resizing window! New size {}x{}", args.viewport().window_size[0], args.viewport().window_size[1]);
     self.window.ctx.resize(
       dpi::PhysicalSize::from_logical(
         (args.viewport().window_size[0], args.viewport().window_size[1]), 2.0
