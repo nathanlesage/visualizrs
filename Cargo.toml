@@ -1,10 +1,17 @@
 [package]
 name = "visualizrs"
+description = "Cross-platform audio visualization"
 version = "0.1.0"
 authors = ["Hendrik Erz <hendrik@zettlr.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package.metadata.bundle]
+name = "VisualizRS"
+identifier = "com.zettlr.visualizrs"
+icon = [ "assets/icons/icon.png", "assets/icons/icon.icns" ]
+resources = [ "assets" ]
 
 [dependencies]
 piston = "0.50.0" # Core library of Piston (I assume )

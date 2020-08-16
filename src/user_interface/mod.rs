@@ -28,7 +28,7 @@ mod dropdown;
 use dropdown::UIDropdown;
 mod util;
 
-use util::{cursor_in_rect, format_number};
+use util::{cursor_in_rect, format_number, find_font};
 
 // Needed for the timeout
 use std::time;
@@ -76,11 +76,13 @@ pub struct UI<'a> {
 
 impl UI<'static> {
   pub fn create () -> Self {
-    let __dirname = current_dir().unwrap(); // When in development-mode, it'll refer to the crate's root, not the actual binary
-    let path_to_font = "assets/fonts/lato/Lato-Regular.ttf";
-    let font_path = String::from(Path::new(&__dirname).join(path_to_font).to_str().unwrap());
-    println!("{}", font_path);
-    let glyph_cache = GlyphCache::new(font_path.clone(), (), TextureSettings::new()).unwrap();
+    let font_path = find_font();
+    if let Err(e) = font_path {
+      use std::io::Write;
+      let mut file = std::fs::File::create("/Users/hendrik/Desktop/log.txt").unwrap();
+      file.write_all(b"Could not find the font path!").unwrap();
+    }
+    let glyph_cache = GlyphCache::new(find_font().unwrap(), (), TextureSettings::new()).unwrap();
 
     Self {
       // General window parameters
@@ -103,7 +105,7 @@ impl UI<'static> {
       selected_renderer: 0,
       event_sender: None,
       device_info: String::from("No device selected"),
-      font_path,
+      font_path: find_font().unwrap(),
       ui_elements: Vec::new(),
       base_font_size: 12.0,
       input_selector_button_rect: [0.0, 0.0, 0.0, 0.0],
